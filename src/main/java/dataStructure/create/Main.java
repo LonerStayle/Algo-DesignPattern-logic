@@ -16,6 +16,7 @@ public class Main {
         linkNumbers.addFirst(20);
         linkNumbers.remove(2);
 
+
         System.out.println(linkNumbers.indexOf(40));
     }
 
