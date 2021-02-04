@@ -9,6 +9,7 @@ fun main() {
     /** 백준 문자열 곱셈*/
 //    MyTeacherCode()
 //    myGarbegeCode()
+
 }
 
 /** 백준 9498번*/
@@ -41,7 +42,7 @@ private fun MyTeacherCode() {
 private fun myGarbegeCode() {
     val a = readLine()!!
     val b = readLine()!!
-    val newA = a.reversed();
+    val newA = a.reversed()
     val newB = b.reversed()
 
     var number = 1
