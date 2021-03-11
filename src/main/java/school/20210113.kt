@@ -8,7 +8,7 @@ fun main() {
 
     /** 백준 문자열 곱셈*/
 //    MyTeacherCode()
-//    myGarbegeCode()
+    myGarbegeCode()
 
 }
 
@@ -31,11 +31,17 @@ private fun myGarbegeCode2() {
 private fun MyTeacherCode() {
     val a = readLine()!!.toInt()
     val b = readLine()!!
-
-    for (el in b.reversed().map { "$it".toInt() }) {
+    for(el in b.reversed().map { "$it".toInt() }){
         println(el * a)
     }
-    println(a * b.toInt())
+    println(a*b.toInt())
+//    val a = readLine()!!.toInt()
+//    val b = readLine()!!
+//
+//    for (el in b.reversed().map { "$it".toInt() }) {
+//        println(el * a)
+//    }
+//    println(a * b.toInt())
 }
 
 //O(mn)

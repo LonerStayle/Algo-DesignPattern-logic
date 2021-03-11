@@ -1,5 +1,7 @@
 package school
 
+import kotlin.math.min
+
 fun main() {
 //    myGarbegeCode()
     myTeacherCode()
@@ -28,6 +30,7 @@ private fun myGarbegeCode() {
 }
 
 fun myTeacherCode() {
+
     val input = readLine()!!.split(" ").map { it.toInt() }
     var hour = input[0]
     var minute = input[1]
