@@ -1,10 +1,17 @@
 package test
 
 fun main() {
-//    println(fibonacciAt(10))
+    useSequence()
+}
+
+private fun useSequence() {
     var result = generateSequence(1 to 1) { it.second to it.first + it.second }
         .map { it.first }
-    println(result.take(10).toList().last())
+
+    result.take(10).forEach {
+        println(it)
+    }
+//    println(result.take(10).toList().last())
 }
 
 
@@ -16,13 +23,14 @@ private fun fibonacciDefalut(n: Int): Int {
 
 //재귀 배열 버전
 private fun fibonacciArr(n: Int): Int {
-    val arr = Array(n) { 0 }
-    arr[0] = 1
-    arr[1] = 1
-    for (i in 2 until arr.size) {
-        arr[i] = arr[i - 1] + arr[i - 2]
-    }
-    return arr[arr.size - 1]
+     Array(n) { 0 }.also {
+         it[0] = 1
+         it[1] = 1
+         for (i in 2 until it.size) {
+             it[i] = it[i - 1] + it[i - 2]
+         }
+         return it.last()
+     }
 }
 
 
@@ -54,11 +62,17 @@ fun fibonacciTail(n: Int, prev: Int, next: Int): Int {
 
 //Reduce을 이용한 피보나치
 fun fibonacciReduce(n: Int): Int {
-    val arr = (1..n).toList().toIntArray()
-    return arr.reduce { acc, v -> acc + v }
+    val arr = (0..n).toList().toIntArray()
+    return arr.reduce { acc, v ->
+        print("acc:$acc ")
+        println("v:$v")
+        acc + v }
 }
 //fold를 이용한 피보나치
 fun fibonacciFold(n: Int): Int {
-    val arr = (1..n).toList().toIntArray()
-    return arr.fold(0) { acc, v -> acc + v }
+    val arr = (0..n).toList().toIntArray()
+    return arr.fold(0) { acc, v ->
+        print("acc:$acc ")
+        println("v:$v")
+        acc + v }
 }
