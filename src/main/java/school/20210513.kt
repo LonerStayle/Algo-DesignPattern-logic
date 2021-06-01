@@ -1,7 +1,6 @@
 package school
 
 import kotlin.math.max
-import kotlin.math.min
 
 
 fun main() {
@@ -9,7 +8,7 @@ fun main() {
 
 
 
-private fun dp9093() {
+private fun dp9095A() {
     val n = readLine()!!.toInt()
     for (i in 1..n) {
         val arrSize = readLine()!!.toInt()
@@ -39,7 +38,6 @@ private fun dp9093() {
 
 
 private fun dp1932() {
-
     val n = readLine()!!.toInt()
     val arr = Array(n) { Array(n) { 0 } }
 

@@ -1,6 +1,5 @@
 package school
 
-import kotlin.math.min
 
 fun main() {
 //    myGarbegeCode()
