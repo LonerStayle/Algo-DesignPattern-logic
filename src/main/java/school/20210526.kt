@@ -4,9 +4,8 @@ import kotlin.math.min
 
 fun main() {
     dp11726()
-
-
 }
+
 
 private fun dp2839() {
     //18

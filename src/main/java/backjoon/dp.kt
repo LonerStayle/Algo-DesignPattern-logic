@@ -3,9 +3,48 @@ import java.io.InputStreamReader
 import java.util.*
 import kotlin.math.max
 import kotlin.math.min
+import java.util.StringTokenizer
+
 
 fun main() {
-    dp10870()
+    dp1912()
+}
+
+//n == 90은 int의 최대를 넘어가서 배열을 long으로 해야함
+private fun dp2748() {
+    val n = readLine()!!.toInt()
+    val arr = Array(91) { 0L }
+    if (n <= 2) {
+        println(
+            if (n == 2) 1
+            else n
+        )
+        return
+    }
+    arr[0] = 0L
+    arr[1] = 1L
+    for (i in 2..n) {
+        arr[i] = arr[i - 1] + arr[i - 2]
+    }
+    println(arr[n])
+}
+
+
+private fun dp11726() {
+    val n = readLine()!!.toInt()
+    val arr = Array(n + 1) { 0 }
+
+    if (n < 3) {
+        println(n)
+        return
+    }
+    arr[1] = 1
+    arr[2] = 2
+
+    for (i in 3..n) {
+        arr[i] = (arr[i - 1] + arr[i - 2]) % 10007
+    }
+    println(arr[n])
 }
 
 private fun dp1003Kotlin() = with(BufferedReader(InputStreamReader(System.`in`))) {
@@ -167,12 +206,50 @@ private fun dp2579() {
 }
 
 private fun dp10870() {
-    val arr = Array(21){0}
+    val arr = Array(21) { 0 }
     val n = readLine()!!.toInt()
     arr[1] = 1
     arr[2] = 1
-    for(i in 3..n){
-        arr[i] = arr[i-1] + arr[i-2]
+    for (i in 3..n) {
+        arr[i] = arr[i - 1] + arr[i - 2]
     }
     println(arr[n])
+}
+
+private fun dp11053() {
+    val n = readLine()!!.toInt()
+    val arr = Array(n + 1) { 0 }
+    val result = IntArray(n + 1) { 1 }
+    val valueList = readLine()!!.split(" ").map { it.toInt() }
+
+    for (i in 0 until n) {
+        arr[i] = valueList[i]
+    }
+
+    for (i in 0 until n) {
+        for (j in 0 until i) {
+            if (arr[i] > arr[j] && result[i] < result[j] + 1)
+                result[i] = result[j] + 1
+        }
+    }
+    println(result.maxOf { it })
+}
+
+private fun dp1912() {
+    val n = readLine()!!.toInt()
+    val arr = Array(n + 1) { 0 }
+    val valueList = readLine()!!.split(" ").map { it.toInt() }
+    val result = IntArray(n + 1) { 0 }
+    for (i in 0 until n) {
+        arr[i] = valueList[i]
+    }
+    result[0] = arr[0]
+    var max = arr[0]
+    for (i in 1 until n) {
+        // (이전 dp + 현재 arr값) 과 현재 arr값 중 큰 것을 dp에 저장
+        result[i] = max(result[i - 1] + arr[i],arr[i])
+        max = max(max, result[i])
+    }
+    println(max)
+
 }
