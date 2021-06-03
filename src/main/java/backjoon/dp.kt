@@ -6,26 +6,7 @@ import kotlin.math.min
 
 
 fun main() {
-
-}
-
-//n == 90은 int의 최대를 넘어가서 배열을 long으로 해야함
-private fun dp2748() {
-    val n = readLine()!!.toInt()
-    val arr = Array(91) { 0L }
-    if (n <= 2) {
-        println(
-            if (n == 2) 1
-            else n
-        )
-        return
-    }
-    arr[0] = 0L
-    arr[1] = 1L
-    for (i in 2..n) {
-        arr[i] = arr[i - 1] + arr[i - 2]
-    }
-    println(arr[n])
+dp10844()
 }
 
 
@@ -46,6 +27,7 @@ private fun dp11726() {
     println(arr[n])
 }
 
+//0일때 0이 +1 1일때 1이 +1
 private fun dp1003Kotlin() = with(BufferedReader(InputStreamReader(System.`in`))) {
     val arr = Array(41) { 0 to 0 }.also {
         it[0] = 1 to 0
@@ -61,7 +43,7 @@ private fun dp1003Kotlin() = with(BufferedReader(InputStreamReader(System.`in`))
     }
 }
 
-
+//메모제이션 관련 문제
 private fun dp9184() {
     val arr = Array(21) { Array(21) { IntArray(21) } }
     fun w(a: Int, b: Int, c: Int): Int {
@@ -79,7 +61,6 @@ private fun dp9184() {
             }
         }
 
-
     }
 
     while (true) {
@@ -88,9 +69,8 @@ private fun dp9184() {
         val input = n!!.split(" ").map { it.toInt() }.toTypedArray()
         println("w(${input[0]} ,${input[1]} ,${input[2]} ) = ${w(input[0], input[1], input[2])}")
     }
-
-
 }
+
 
 private fun dp11727() {
     val n = readLine()!!.toInt()
@@ -127,8 +107,6 @@ private fun dp2839() {
         }
     }
     println(arr[n])
-
-
 }
 
 private fun dp1003(): String {
@@ -246,11 +224,38 @@ private fun dp1912() {
     var max = arr[0]
     for (i in 1 until n) {
         // (이전 dp + 현재 arr값) 과 현재 arr값 중 큰 것을 dp에 저장
-        result[i] = max(result[i - 1] + arr[i],arr[i])
+        result[i] = max(result[i - 1] + arr[i], arr[i])
         max = max(max, result[i])
     }
     println(max)
 
+}
+
+private fun dp10844() {
+    val n = readLine()!!.toInt()
+    val dp = Array(101) { LongArray(11) { 0 } }
+
+    // dp[N][L] = dp[N - 1][L - 1] + dp[N - 1][L + 1]
+    // 길이 N, 마지막 숫자가 L일 경우
+    for (i in 1..9) {
+        dp[1][i] = 1
+    }
+    if(n == 1) {
+        println(9)
+        return
+    }
+    for (i in 2..n) {
+        dp[i][0] = dp[i - 1][1];
+        for (j in 1..9) {
+            dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j + 1]) % 1000000000;
+        }
+    }
+
+    var sum = 0L
+    for (i in 0 until 10) {
+        sum += dp[n][i];
+    }
+    println(sum % 1000000000);
 }
 
 
