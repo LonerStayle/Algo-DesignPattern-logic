@@ -2,7 +2,6 @@ package school
 
 import kotlin.math.max
 
-
 fun main(){
     dp2156()
 }
