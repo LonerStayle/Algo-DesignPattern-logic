@@ -1,4 +1,4 @@
-package test
+package etc
 
 fun main() {
     useSequence()

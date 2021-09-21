@@ -1,4 +1,4 @@
-package garbege
+package etc
 
 data class DataClassTest(val value: Int) {
     val safeValue: Int

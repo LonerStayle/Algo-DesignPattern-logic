@@ -1,4 +1,4 @@
-package garbege;
+package etc;
 
 import java.io.*;
 
@@ -7,7 +7,7 @@ public class BufferedOutputStreamBasicExample {
 
     public static void main(String[] args) {
         try {
-            FileInputStream f_stream = new FileInputStream("test");
+            FileInputStream f_stream = new FileInputStream("etc");
             byte receive[] = new byte[32];
             BufferedInputStream stream = new BufferedInputStream(f_stream, 1024);
             stream.read(receive);
