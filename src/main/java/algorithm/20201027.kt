@@ -5,10 +5,9 @@ import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
-fun main(){
+fun main() {
 
 }
-
 
 
 fun stringBuffer() {
@@ -17,7 +16,7 @@ fun stringBuffer() {
     val count = bufferedReader.readLine()?.toInt() ?: 0
 
     repeat(count) {
-        bufferedWriter.write("${bufferedReader.readLine()!!.split(' ').map { it.toInt()}.sum()}")
+        bufferedWriter.write("${bufferedReader.readLine()!!.split(' ').map { it.toInt() }.sum()}")
         bufferedWriter.newLine()
     }
 

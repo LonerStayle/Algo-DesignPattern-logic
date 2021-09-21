@@ -7,19 +7,24 @@ public class Hash {
 
     }
 
-    private static void phoneNumber(){
-      String[] phoneBook = {"123","5555","7766","12359"};
-      boolean answer = true;
-     for(int i = 0; i<phoneBook.length-1; i++){
-         for(int j = i+1; j<phoneBook.length; j++){
-             if(phoneBook[i].startsWith(phoneBook[j])){answer = false;}
-             if(phoneBook[j].startsWith(phoneBook[i])){answer = false;}
-         }
-     }
-      System.out.println(answer);
+    private static void phoneNumber() {
+        String[] phoneBook = {"123", "5555", "7766", "12359"};
+        boolean answer = true;
+        for (int i = 0; i < phoneBook.length - 1; i++) {
+            for (int j = i + 1; j < phoneBook.length; j++) {
+                if (phoneBook[i].startsWith(phoneBook[j])) {
+                    answer = false;
+                }
+                if (phoneBook[j].startsWith(phoneBook[i])) {
+                    answer = false;
+                }
+            }
+        }
+        System.out.println(answer);
     }
-    private static boolean realPhoneNumber(){
-        String[] phone_book = {"123","5555","7766","12359"};
+
+    private static boolean realPhoneNumber() {
+        String[] phone_book = {"123", "5555", "7766", "12359"};
         for (int i = 0; i < phone_book.length - 1; i++) {
             int hashPhone = phone_book[i].hashCode();
             int len = phone_book[i].length();
@@ -41,26 +46,25 @@ public class Hash {
 
         return true;
     }
-    
-//완주하지 못한 선수
+
+    //완주하지 못한 선수
     private static void first() {
-        String[] participant =  {"mislav", "stanko", "mislav", "ana"};
+        String[] participant = {"mislav", "stanko", "mislav", "ana"};
         String[] completion = {"mislav", "stanko", "ana"};
         String answer = "ㅁㅁ";
 
         Arrays.sort(participant);
         Arrays.sort(completion);
-        for(int i = 0; i<completion.length; i++){
-            if(!participant[i].equals(completion[i])){
+        for (int i = 0; i < completion.length; i++) {
+            if (!participant[i].equals(completion[i])) {
                 answer = participant[i];
                 System.out.println(answer);
                 return;
             }
         }
-        answer += participant[participant.length-1];
+        answer += participant[participant.length - 1];
         System.out.println(answer);
     }
-
 
 
 }

@@ -1,4 +1,5 @@
 package algorithm
+
 fun main() {
     val t = readLine()!!.toInt()
     for (i in 0 until t) {

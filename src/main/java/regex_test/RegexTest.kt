@@ -13,20 +13,19 @@ fun main() {
     val testStr = "Hello World 1 2 3 4 5 \\\\ {}"
     val regex = "[a-zA-Z0-9]".toRegex()
     regex.findAll(testStr).also {
-        println("대소문자와 숫자 사이즈 테스트:"+it.count())
-        it.iterator().forEach { result-> print(result.groupValues) }
-        println("\n첫번째 문자만 찾기:"+regex.find(testStr)?.groupValues)
+        println("대소문자와 숫자 사이즈 테스트:" + it.count())
+        it.iterator().forEach { result -> print(result.groupValues) }
+        println("\n첫번째 문자만 찾기:" + regex.find(testStr)?.groupValues)
     }
 
     //자바에서 역슬래쉬 \ 는 두번쳐야 한개임 \\ -> SIZE: 1
     val backSlashRegex = "[\\{\\\\}]".toRegex()
     backSlashRegex.findAll(testStr).also {
         println()
-        println("백슬래쉬 와 특수문자 테스트:"+it.count())
-        it.iterator().forEach { result-> print(result.groupValues) }
-        println("\n첫번째 문자만 찾기:"+backSlashRegex.find(testStr)?.groupValues)
+        println("백슬래쉬 와 특수문자 테스트:" + it.count())
+        it.iterator().forEach { result -> print(result.groupValues) }
+        println("\n첫번째 문자만 찾기:" + backSlashRegex.find(testStr)?.groupValues)
     }
-
 
 
 }

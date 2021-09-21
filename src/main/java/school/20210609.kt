@@ -1,8 +1,5 @@
 package school
 
-import kotlin.math.max
-
-
 
 fun dp10844() {
     val n = readLine()!!.toInt()

@@ -16,7 +16,7 @@ fun main() {
 //O(1)
 private fun myGarbegeCode2() {
     //when 안에서 의미를 알게하기위해 객체 네이밍 변수로 넘겨주는게좋음
-    val score= readLine()!!.toInt()
+    val score = readLine()!!.toInt()
     val result = when (score) {
         in 90..100 -> "A"
         in 80..89 -> "B"
@@ -31,10 +31,10 @@ private fun myGarbegeCode2() {
 private fun MyTeacherCode() {
     val a = readLine()!!.toInt()
     val b = readLine()!!
-    for(el in b.reversed().map { "$it".toInt() }){
+    for (el in b.reversed().map { "$it".toInt() }) {
         println(el * a)
     }
-    println(a*b.toInt())
+    println(a * b.toInt())
 //    val a = readLine()!!.toInt()
 //    val b = readLine()!!
 //

@@ -2,11 +2,11 @@ package dataStructure.kotlin
 
 import org.junit.Test
 
-class ArrayTest{
-    var arrayTest = Array<Int?>(4){0}
+class ArrayTest {
+    var arrayTest = Array<Int?>(4) { 0 }
 
     @Test
-    fun test(){
+    fun test() {
         arrayTest.apply {
             this[3] = null
             this.forEach {

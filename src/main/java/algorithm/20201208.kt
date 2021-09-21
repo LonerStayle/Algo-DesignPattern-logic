@@ -3,7 +3,7 @@ package algorithm
 import java.util.*
 
 fun main() {
-            numberCount()
+    numberCount()
 }
 
 //백준 2577
@@ -13,15 +13,15 @@ fun numberCount() {
     val B = scan.nextInt()
     val C = scan.nextInt()
     val reslult = (A * B * C).toString()
-        for(i in 0..9){
-            val current = 0
-            for(j in reslult.indices){
-                if(reslult[j].toInt() == i){
-
-                }
+    for (i in 0..9) {
+        val current = 0
+        for (j in reslult.indices) {
+            if (reslult[j].toInt() == i) {
 
             }
+
         }
+    }
 
 
 }

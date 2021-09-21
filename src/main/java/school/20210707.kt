@@ -86,10 +86,10 @@ fun onePlus() {
 
 fun dp1520() {
     val mn = readLine()!!.split(" ").map { it.toInt() }
-    val arrArr = Array(mn[0]){ arrayOf<Int>()}
-    val resultArr = Array(mn[0]){Array(mn[1]){0} }
-    repeat(mn[0]){
-        val arr =  readLine()!!.split(" ").map { it.toInt() }
+    val arrArr = Array(mn[0]) { arrayOf<Int>() }
+    val resultArr = Array(mn[0]) { Array(mn[1]) { 0 } }
+    repeat(mn[0]) {
+        val arr = readLine()!!.split(" ").map { it.toInt() }
         arrArr[it] = arr.toTypedArray()
     }
 //    4 5
@@ -100,14 +100,14 @@ fun dp1520() {
 
     arrArr[0][0] = 1
 
-    for(m in 1..arrArr.size){
-        for(n in 1..m){
-            resultArr[m][n] = when{
-                arrArr[m][n] > arrArr[m-1][n] -> resultArr[m-1][n] + resultArr[m][n-1]
-                arrArr[m][n] < arrArr[m-1][n] -> resultArr[m-1][n]
-                arrArr[m][n] > arrArr[m][n-1] -> resultArr[m-1][n] + resultArr[m][n-1]
-                arrArr[m][n] < arrArr[m][n-1] -> resultArr[m-1][m]
-                else ->  0
+    for (m in 1..arrArr.size) {
+        for (n in 1..m) {
+            resultArr[m][n] = when {
+                arrArr[m][n] > arrArr[m - 1][n] -> resultArr[m - 1][n] + resultArr[m][n - 1]
+                arrArr[m][n] < arrArr[m - 1][n] -> resultArr[m - 1][n]
+                arrArr[m][n] > arrArr[m][n - 1] -> resultArr[m - 1][n] + resultArr[m][n - 1]
+                arrArr[m][n] < arrArr[m][n - 1] -> resultArr[m - 1][m]
+                else -> 0
             }
         }
     }

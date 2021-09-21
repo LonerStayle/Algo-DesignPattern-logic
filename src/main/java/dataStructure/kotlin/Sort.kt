@@ -20,7 +20,6 @@ fun selectionSort(arr: Array<Int>) {
 }
 
 
-
 // 삽입 정렬
 private fun insertionSort(list: Array<Int>) {
 
@@ -29,7 +28,7 @@ private fun insertionSort(list: Array<Int>) {
         var aux = i - 1
         //while 조건으로 key와 list[aux] 사이의 부등호에 따라
         // < 내림차순 , >  오름차순
-        while (aux>=0 && key < list[aux]) {
+        while (aux >= 0 && key < list[aux]) {
             list[aux + 1] = list[aux]
             aux--
         }
@@ -39,15 +38,15 @@ private fun insertionSort(list: Array<Int>) {
 }
 
 //버블정렬
-private fun bubbleSort(arr: Array<Int>){
-    var temp:Int
-    for(i in arr.size-1 downTo 0){
-        for(j in 0 until i){
+private fun bubbleSort(arr: Array<Int>) {
+    var temp: Int
+    for (i in arr.size - 1 downTo 0) {
+        for (j in 0 until i) {
             //<내림차순, > 오름차순
-            if(arr[j]>arr[j+1]){
+            if (arr[j] > arr[j + 1]) {
                 temp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = temp
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
             }
         }
     }

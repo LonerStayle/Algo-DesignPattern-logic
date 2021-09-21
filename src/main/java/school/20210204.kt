@@ -11,31 +11,32 @@ fun main() {
 
     star8()
 }
+
 //포문안에 포문은 최대한 없애버리기
-private fun star8(){
+private fun star8() {
     val n = readLine()!!.toInt()
 
     //상단 별
-    for(i in 1..n-1){
-        for(j in 0 until i){
+    for (i in 1..n - 1) {
+        for (j in 0 until i) {
             print('*')
         }
-        for (k in 0 until (n*2)-(i*2)){
+        for (k in 0 until (n * 2) - (i * 2)) {
             print(' ')
         }
         for (kk in i downTo 1)
             print("*")
         println()
     }
-    for (i in 1 .. n*2)
+    for (i in 1..n * 2)
         print("*")
     println()
 
-    for (i in (n-1) downTo 1) {
-        for(j in 0 until i){
+    for (i in (n - 1) downTo 1) {
+        for (j in 0 until i) {
             print('*')
         }
-        for (k in 0 until (n*2)-(i*2)){
+        for (k in 0 until (n * 2) - (i * 2)) {
             print(' ')
         }
         for (kk in i downTo 1)
@@ -44,49 +45,50 @@ private fun star8(){
     }
 }
 
-private fun teacherSever(){
+private fun teacherSever() {
     val n = readLine()!!.toInt()
     //상단 별
-    for(i in 1 until n){
-        for(j in 0 until n-i){
+    for (i in 1 until n) {
+        for (j in 0 until n - i) {
             print(' ')
         }
-        for (k in 0 until 2*i-1){
+        for (k in 0 until 2 * i - 1) {
             print("*")
         }
         println()
     }
     //중간별
-    for(i in 1 until (n*2))
+    for (i in 1 until (n * 2))
         print("*")
     println()
 
     //하단별
-    for(i in n-1 downTo 1){
-        for(j in 0 until n-i){
+    for (i in n - 1 downTo 1) {
+        for (j in 0 until n - i) {
             print(' ')
         }
-        for(k in 0 until 2*i -1)
+        for (k in 0 until 2 * i - 1)
             print("*")
         println()
     }
 
 }
+
 //O(n^4)
 //my coding
-private fun seven(){
+private fun seven() {
     val n = readLine()!!.toInt() //1
 
-    for(i in 1..n){//n
-        for(j in 0 until n - i ){//n
+    for (i in 1..n) {//n
+        for (j in 0 until n - i) {//n
             print(' ')
         }
-        for(k in 0 until 2*i-1){//1
+        for (k in 0 until 2 * i - 1) {//1
             print('*')
         }
         println() //1
-        if(i == n){
-            for (i in (n-1) downTo 1) { //n
+        if (i == n) {
+            for (i in (n - 1) downTo 1) { //n
                 for (j in 0 until n - i) { //n
                     print(' ')
                 }

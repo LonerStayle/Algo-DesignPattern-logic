@@ -1,20 +1,21 @@
 package algorithm
-//백준 다리놓기 문제.
-    fun main(args: Array<String>) {
 
-        val T: Int = readLine()!!.toInt()
-        for (i in 0 until T) {
-            val N: Int = readLine()!!.toInt()
-            val M: Int = readLine()!!.toInt()
-            val dp = Array(N + 1) { IntArray(M + 1) }
-            for (n in 2..N) dp[n][1] = 0
-            for (m in 1..M) dp[1][m] = m
-            for (x in 2..N) {
-                for (y in 2..M) {
-                    dp[x][y] = dp[x][y - 1] + dp[x - 1][y - 1]
-                }
+//백준 다리놓기 문제.
+fun main(args: Array<String>) {
+
+    val T: Int = readLine()!!.toInt()
+    for (i in 0 until T) {
+        val N: Int = readLine()!!.toInt()
+        val M: Int = readLine()!!.toInt()
+        val dp = Array(N + 1) { IntArray(M + 1) }
+        for (n in 2..N) dp[n][1] = 0
+        for (m in 1..M) dp[1][m] = m
+        for (x in 2..N) {
+            for (y in 2..M) {
+                dp[x][y] = dp[x][y - 1] + dp[x - 1][y - 1]
             }
-            println(dp[N][M])
         }
+        println(dp[N][M])
     }
+}
 

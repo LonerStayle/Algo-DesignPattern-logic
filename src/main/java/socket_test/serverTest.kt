@@ -4,10 +4,10 @@ import java.net.ServerSocket
 
 fun main() {
 
-    Thread{
+    Thread {
         try {
             val serverRead = ServerSocket(8888)
-            while (true){
+            while (true) {
                 val socket = serverRead.accept()
                 val input = socket.getInputStream()
                 val dataInputStream = DataInputStream(input)
@@ -18,7 +18,7 @@ fun main() {
                 println("Android 에서 받은 문자열 : $stringData")
             }
 
-        }catch (e:java.lang.Exception){
+        } catch (e: java.lang.Exception) {
             e.printStackTrace()
         }
     }.start()

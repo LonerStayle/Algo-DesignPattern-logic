@@ -1,6 +1,5 @@
 package school
 
-import kotlin.math.max
 import kotlin.math.min
 
 fun main() {
@@ -39,11 +38,11 @@ private fun dp2839() {
     }
     arr[3] = 1
     arr[5] = 1
-    for(i in 6..n){
-        arr[i] = when{
-            arr[i - 3] > 0 && arr[i - 5] >0 -> min(arr[i-3],arr[i-5]) +1
-            arr[i - 3] > 0 -> arr[i - 3] +1
-            arr[i - 5] > 0 -> arr[i - 5] +1
+    for (i in 6..n) {
+        arr[i] = when {
+            arr[i - 3] > 0 && arr[i - 5] > 0 -> min(arr[i - 3], arr[i - 5]) + 1
+            arr[i - 3] > 0 -> arr[i - 3] + 1
+            arr[i - 5] > 0 -> arr[i - 5] + 1
             else -> -1
         }
     }

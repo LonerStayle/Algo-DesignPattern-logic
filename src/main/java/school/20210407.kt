@@ -7,19 +7,19 @@ fun main() {
     println(fiboArray(n))
 }
 
-private fun fibo(n:Int):Int{
-    if(n <= 2) return 1
-    return fibo(n-1) + fibo(n-2)
+private fun fibo(n: Int): Int {
+    if (n <= 2) return 1
+    return fibo(n - 1) + fibo(n - 2)
 }
 
-private fun fiboArray(n:Int):Int{
-    val arr = Array<Int> (n) {it}
+private fun fiboArray(n: Int): Int {
+    val arr = Array<Int>(n) { it }
     arr[0] = 1
     arr[1] = 1
-    for(i in 2 until n){
-        arr[i] = arr[i-1] + arr[i-2]
+    for (i in 2 until n) {
+        arr[i] = arr[i - 1] + arr[i - 2]
     }
-    return arr[n-1]
+    return arr[n - 1]
 }
 
 private fun star8() {

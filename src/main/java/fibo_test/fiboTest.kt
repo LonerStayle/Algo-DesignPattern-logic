@@ -23,14 +23,14 @@ private fun fibonacciDefalut(n: Int): Int {
 
 //재귀 배열 버전
 private fun fibonacciArr(n: Int): Int {
-     Array(n) { 0 }.also {
-         it[0] = 1
-         it[1] = 1
-         for (i in 2 until it.size) {
-             it[i] = it[i - 1] + it[i - 2]
-         }
-         return it.last()
-     }
+    Array(n) { 0 }.also {
+        it[0] = 1
+        it[1] = 1
+        for (i in 2 until it.size) {
+            it[i] = it[i - 1] + it[i - 2]
+        }
+        return it.last()
+    }
 }
 
 
@@ -66,13 +66,16 @@ fun fibonacciReduce(n: Int): Int {
     return arr.reduce { acc, v ->
         print("acc:$acc ")
         println("v:$v")
-        acc + v }
+        acc + v
+    }
 }
+
 //fold를 이용한 피보나치
 fun fibonacciFold(n: Int): Int {
     val arr = (0..n).toList().toIntArray()
     return arr.fold(0) { acc, v ->
         print("acc:$acc ")
         println("v:$v")
-        acc + v }
+        acc + v
+    }
 }

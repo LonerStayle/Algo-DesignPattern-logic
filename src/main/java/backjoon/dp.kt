@@ -1,4 +1,3 @@
-import algorithm.sum
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.util.*
@@ -7,7 +6,7 @@ import kotlin.math.min
 
 
 fun main() {
-dp10844()
+    dp10844()
 }
 
 
@@ -233,27 +232,27 @@ private fun dp1912() {
 }
 
 private fun dp10844() {
-   val n = readLine()!!.toInt()
-   val dp = Array(101){LongArray(11){0} }
-    for( i in 1..9){
+    val n = readLine()!!.toInt()
+    val dp = Array(101) { LongArray(11) { 0 } }
+    for (i in 1..9) {
         dp[1][i] = 1
     }
-    if (n<2){
+    if (n < 2) {
         println(9)
         return
     }
 
-    for(i in 2..n){
-        dp[i][0] = dp[i-1][1]
-        for(j in 1..9){
-            dp[i][j] = (dp[i-1][j-1] + dp[i-1][j+1]) % 1000000000
+    for (i in 2..n) {
+        dp[i][0] = dp[i - 1][1]
+        for (j in 1..9) {
+            dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j + 1]) % 1000000000
         }
     }
     var sum = 0L
-    for (i in 0 until 10){
+    for (i in 0 until 10) {
         sum += dp[n][i]
     }
-    println(sum% 1000000000)
+    println(sum % 1000000000)
 
 
 //    val n = readLine()!!.toInt()

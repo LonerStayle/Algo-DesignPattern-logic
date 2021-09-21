@@ -2,8 +2,6 @@ package dataStructure.java;
 
 import org.junit.Test;
 
-import java.lang.reflect.Array;
-
 public class ArrayTest {
     int[] numbers1 = new int[4];
     String[] stringArray = new String[4];
@@ -27,23 +25,23 @@ public class ArrayTest {
         System.out.println(stringArray[3]);
         //결과: null
     }
+
     @Test
-    public void recycler(){
+    public void recycler() {
         numbers1[0] = 10;
         numbers1[1] = 20;
         numbers1[2] = 30;
 
-        int i=0;
-        while(numbers1.length > i){
+        int i = 0;
+        while (numbers1.length > i) {
             System.out.println(numbers1[i]);
             i++;
         }
 
-        for(i=0; numbers1.length>i; i++){
+        for (i = 0; numbers1.length > i; i++) {
             System.out.println(numbers1[i]);
         }
     }
-
 
 
 }

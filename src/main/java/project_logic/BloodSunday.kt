@@ -9,15 +9,17 @@ fun main() {
     var selectOne = -1
     var selectTwo = 0
 
-    fun gameLogic(){
+    fun gameLogic() {
         while (testCase < allRound) {
             testCase++
             selectOne += 1
             selectTwo += 1
             list.removeAt(selectTwo)
             if (testCase == allRound) {
-                list.forEach { print(it)
-                println("사이즈:${list.size*2}강")}
+                list.forEach {
+                    print(it)
+                    println("사이즈:${list.size * 2}강")
+                }
             }
         }
         selectOne = -1
@@ -40,8 +42,6 @@ fun main() {
     gameLogic()
     //결승
     gameLogic()
-
-
 
 
 }

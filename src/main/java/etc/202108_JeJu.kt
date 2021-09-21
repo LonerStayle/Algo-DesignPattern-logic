@@ -31,7 +31,7 @@ fun main() {
             14500 +
             5800 +
             41360 +
-            12000)/2)+8900
+            12000) / 2) + 8900
     val joyTosubBi = 8150 + 12000 + 1950
     val result = subBiToJoy - joyTosubBi
     println("서비가 조이에게 보내야 할 금액:$subBiToJoy")

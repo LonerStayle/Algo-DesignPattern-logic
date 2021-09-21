@@ -18,9 +18,9 @@ public class ArrayList {
     }
 
 
-    public boolean add(int index, Object element){
-        for(int i = size -1; i>= index; i--){
-            elementData[i+1] = elementData[i];
+    public boolean add(int index, Object element) {
+        for (int i = size - 1; i >= index; i--) {
+            elementData[i + 1] = elementData[i];
         }
         elementData[index] = element;
         size++;
@@ -73,31 +73,37 @@ public class ArrayList {
         return -1;
     }
 
-    public ListIterator listIterator(){
+    public ListIterator listIterator() {
         return new ListIterator();
     }
+
     class ListIterator {
-        private int nextIndex =0;
-        public boolean hasNext(){
+        private int nextIndex = 0;
+
+        public boolean hasNext() {
             return nextIndex < size();
         }
-        public Object next(){
+
+        public Object next() {
             return elementData[nextIndex++];
         }
-        public boolean hasPrevious(){
-            return nextIndex>0;
+
+        public boolean hasPrevious() {
+            return nextIndex > 0;
         }
-        public Object previous(){
+
+        public Object previous() {
             return elementData[--nextIndex];
         }
+
         // 현재 엘리먼트를 추가합니다.
-        public void add(Object element){
+        public void add(Object element) {
             ArrayList.this.add(nextIndex++, element);
         }
 
         // 현재 엘리먼트를 삭제합니다.
-        public void remove(){
-            ArrayList.this.remove(nextIndex-1);
+        public void remove() {
+            ArrayList.this.remove(nextIndex - 1);
             nextIndex--;
         }
     }

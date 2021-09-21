@@ -114,21 +114,22 @@ public class LinkedListTest {
             temp = temp.next;
             i++;
 
-            if(temp == null)
-               return -1;
+            if (temp == null)
+                return -1;
         }
         return i;
     }
+
     public ListIterator listIterator() {
         return new ListIterator();
     }
 
-    public class ListIterator{
+    public class ListIterator {
         private Node lastReturned;
         private Node next;
         private int nextIndex;
 
-         ListIterator(){
+        ListIterator() {
             next = head;
             nextIndex = 0;
         }

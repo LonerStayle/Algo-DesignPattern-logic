@@ -11,9 +11,8 @@ fun main() {
 //     val b  =  list.find { it == 5 }
 //    val c  = list.indexOf(b)
 //    val hhi = list.subList(c,list.lastIndex)
-    
-}
 
+}
 
 
 fun calculateDistance(txPower: Int, rssi: Double): Double {
@@ -28,7 +27,7 @@ fun calculateDistance(txPower: Int, rssi: Double): Double {
     }
 }
 
-fun getDistance(txPower: Int, rssi: Double):Double {
+fun getDistance(txPower: Int, rssi: Double): Double {
     if (rssi > 0.0) {
         return -1.0; // if we cannot determine accuracy, return -1.
     }
@@ -59,7 +58,7 @@ private fun findRemainder() {
 }
 
 fun MutableList<Int>.getExitList(
-        newScanList: MutableList<Int>, scanList: MutableList<Int>
+    newScanList: MutableList<Int>, scanList: MutableList<Int>
 ): MutableList<Int> {
     this.clear()
     for (scan in newScanList) {
